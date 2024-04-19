@@ -5,9 +5,9 @@ import "./index.css";
 import { ThemeProvider, createTheme } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.tsx';
-
-React.useLayoutEffect=React.useEffect;
-
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:5000/api/v1";
+axios.defaults.withCredentials=true;
 
 const theme=createTheme({
   typography:{fontFamily:"Roboto Slab,serif",allVariants:{color:"white"}}
