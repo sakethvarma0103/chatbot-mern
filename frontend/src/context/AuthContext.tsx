@@ -12,7 +12,7 @@ type UserAuth={
     logout:()=>Promise<void>;
 }
 const AuthContext = createContext<UserAuth | null >(null)
-const AuthProvider=({children}:{children:ReactNode})=>{
+export const AuthProvider=({children}:{children:ReactNode})=>{
     const [user,setUser]=useState<User | null>(null)
     const [isLoggedIn,setIsLoggedIn]=useState(false)
 
