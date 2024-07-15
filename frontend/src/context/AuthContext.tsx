@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { loginUser } from "../helpers/api-communicators";
 
 type User={
     name:string;
@@ -18,7 +19,11 @@ export const AuthProvider=({children}:{children:ReactNode})=>{
 
     useEffect(()=>{},[]);
     const login= async (email:string, password:string)=>{
-
+        const data=await loginUser(email,password);
+        if (data){
+            setUser({email:data.email,name:data.name});
+            setIsLoggedIn(true);
+        }
     }
     const signup= async (name:string,email:string, password:string)=>{
 

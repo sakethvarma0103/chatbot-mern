@@ -49,7 +49,7 @@ export const getAllUsers = async (
         httpOnly:true,
         signed:true,
       });
-      return res.status(201).json({ message: "OK", users });
+      return res.status(201).json({ message: "OK", name:users.name ,email:users.email});
     } catch (error) {
       console.log(error);
       return res.status(200).json({ message: "ERROR", cause: error.message });
@@ -89,7 +89,7 @@ export const getAllUsers = async (
         httpOnly:true,
         signed:true,
       });
-      return res.status(200).json({ message: "OK", users });
+      return res.status(200).json({ message: "OK", name:users.name ,email:users.email });
     } catch (error) {
       console.log(error);
       return res.status(200).json({ message: "ERROR", cause: error.message });
