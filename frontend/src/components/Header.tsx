@@ -12,7 +12,7 @@ const Header = () => {
             <Logo />
             {auth?.isLoggedIn ?<>
             <NavigationLink bg="#00fffc" to="/chat" text="Go To Chat" textColor="black" onClick={auth.logout}/>
-            <NavigationLink bg="#515387" to="/chat" text="Go To Chat" textColor="white" onClick={auth.logout}/>
+            <NavigationLink bg="#515387" to="/chat" text="Logout" textColor="white" onClick={auth.logout}/>
             </> :
             <>
             <NavigationLink bg="#00fffc" to="/login" text="Login" textColor="black" onClick={function (): Promise<void> {
